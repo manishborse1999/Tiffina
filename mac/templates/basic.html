@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>
+        {% block title %} {% endblock %}
+    </title>
+    <style>
+
+      {% block css %} {% endblock %}
+
+
+
+    </style>
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand " href="#" ><em><b><u>My Awesome Cart</u></b></em></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/blog">Blog</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/shop/about">About Us <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active ">
+                <a class="nav-link" href="/shop/contact">Contact Us</a>
+            </li>
+            <form method="get" action="/shop/search/" class="form-inline my-2 my-lg-0" style="">
+                <input class="form-control mx-4 mr-sm-2" type="search" placeholder="Search Here" aria-label="Search"
+                       name="search" id="search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
+        </ul>
+
+        <!--            <h6 class="text-muted" id="hello">Hello,Sign in</h6>-->
+
+        {% if user.is_authenticated %}
+        <li class="mx-2" style="color:#fff">Hello,{{user.first_name}}</li>
+        <a href="/logout" class="btn btn-info mx-2" data-toggle="popover-hover" role="button"
+           aria-pressed="true" data-content="Click here to logout">Logout</a>
+        {% else %}
+        <a href="/login" class="btn btn-info mx-2" data-toggle="popover-hover" role="button"
+           aria-pressed="true" data-content="Already have account ?<br> Login here.">Login</a>
+        <a href="/registration" class="btn btn-outline-info " data-toggle="popover-hover" role="button" aria-pressed="true" data-content="New User ?<br>Create account here.">Create
+            Account</a>
+        {% endif %}
+
+        <button type="button" class="btn btn-secondary mx-2" id="popcart" data-container="body" data-toggle="popover-hover"
+                data-placement="bottom" data-html="true" data-content="Cart for your items.">
+            Cart(<span id="cart">0</span>)
+        </button>
+
+    </div>
+</nav>
+
+<div class="container">
+    {% block body %} {% endblock %}
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+{% block js %} {% endblock %}
+</body>
+</html>

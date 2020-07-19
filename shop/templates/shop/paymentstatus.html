@@ -1,0 +1,28 @@
+{% extends 'shop/basic.html' %}
+
+{% block title %} My Awesome cart Tracker  {% endblock %}
+
+{% block css%}
+
+.container {
+max-width: 808px;
+}
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container my-3 border border-dark">
+<!--    {{response}}-->
+    <div class="col">
+        <h4><b>Payment status regarding your order Id {{response.ORDERID}}</b></h4>
+        {% if response.RESPCODE == '01' %}
+        Order Successful
+        {% else %}
+        Order Failure
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock %}

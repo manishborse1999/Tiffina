@@ -1,0 +1,40 @@
+{% extends 'blog/basic.html' %}
+{% block css %}
+.border {
+    border: 5px solid #fd142ead!important;
+}
+{% endblock%}
+{% block body %}
+  <div class="container mt-4">
+    <div class="row mb-2">
+    {% for item in myposts %}
+
+    <div class="col-md-6 ">
+      <div class="row no-gutters border border-danger rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static  ">
+          <strong class="d-inline-block mb-2 text-primary">{{item.head0}}</strong>
+          <h3 class="mb-0"> {{item.title}}</h3>
+          <div class="mb-1 text-muted">{{item.pub_date}}</div>
+          <p class="card-text mb-auto">{{item.head1}}</p>
+          <a href="blogpost/{{item.post_id}}" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="/media/{{item.thumbnail}}" class="bd-placeholder-img" width="250" height="250" aria-label="Placeholder: Thumbnail"/>
+      </div>
+    </div>
+    </div>
+      {% if forloop.counter|divisibleby:2  %}
+  </div><div class="row mb-2">
+    {% endif %}
+    {% endfor %}
+  </div>
+  </div>
+{% endblock %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

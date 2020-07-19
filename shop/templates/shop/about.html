@@ -1,0 +1,68 @@
+{% extends 'shop/basic.html' %}
+
+{% load static %}
+
+{% block title %} About-Us {% endblock %}
+
+{% block css %}
+
+body{
+background-image: url("paper.gif");
+background-color: #cccccc;
+}
+
+{% endblock %}
+
+{% block body %}
+
+<main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron border border-dark my-3">
+        <div class="container">
+            <h1 class="display-3" id="cd">MyAwsome Cart</h1>
+            <p>MyAwsome Cart is an Indian e-commerce company based in Nashik, Maharashtra, India. It was founded by
+                Manish Borse in 2020. The company initially focused on book sales, before expanding into other product
+                categories such as consumer electronics, fashion, home essentials & groceries, and lifestyle products.
+                The service competes primarily with Amazon's Indian subsidiary, and the domestic rival Snapdeal.As of
+                July, MyAwsome Cart held a 0.5% market share of India's e-commerce industry.</p>
+            <p><a class="btn btn-primary btn-lg border border-warning" href="https://en.wikipedia.org/wiki/Flipkart" role="button">Learn more
+                &raquo;</a></p>
+        </div>
+    </div>
+
+<div class="text-center"> <a class="btn btn-danger btn-lg border border-dark" href="/blog" role="button">Visit Blog
+                &raquo;</a></div>
+    <div class="container my-5 ">
+        <!-- Example row of columns -->
+        <div class="row" id="abt">
+            <div class="col-md-4 ">
+                <img class="rounded-circle rounded mx-auto d-block border border-dark" src="{% static 'shop/manishb.jpg' %}"
+                     alt="Generic placeholder image" width="140" height="140">
+                <h2 class="text-center">Manish Borse</h2>
+                <p><h6>Python Developer(Django).</h6> </p>
+                <p><a class="btn btn-outline-dark my-3" href="https://www.linkedin.com/in/manish-borse-b47aa2193"
+                      role="button">View details &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <img class="rounded-circle rounded mx-auto d-block border border-dark" src="{% static 'shop/jeevann.jpg' %}" width="140"
+                     height="140">
+                <h2 class="text-center">Jeeven Nikam</h2>
+                <p><h6>JAVA Developer.(Eight Years Of Experience.)</h6></p>
+                <p><a class="btn btn-outline-dark my-3" href="https://www.linkedin.com/in/jeevan-nikam-388a7a125"
+                      role="button">View details &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <img class="rounded-circle rounded mx-auto d-block border border-dark" src="{% static 'shop/vaibhav.jpg'%}"
+                     alt="Generic placeholder image" width="140" height="140">
+                <h2 class="text-center">Vaibhav Borse</h2>
+                <p><h6>Backend Developer(Sql).</h6></p>
+                <p><a class="btn btn-outline-dark my-3 "
+                      href="https://www.youtube.com/watch?v=ZNObiptSMSI&list=PL08903FB7ACA1C2" role="button">View
+                    details &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+
+</main>
+{% endblock %}

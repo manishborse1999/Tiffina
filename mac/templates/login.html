@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+h1{
+font-size:2rem;
+}
+.badge{
+font-size:186%;
+padding: .25em 3.9em;
+}
+.h1{
+font-size:2.2rem;
+}
+.border{
+border-color:#c7c2c1
+}
+.offset-lg-3{
+margin-left:33%;
+}
+.btn1{
+padding: .375rem 9.9rem;
+background-color:#fd7e14e8;
+border-color:#0e0801b3;
+}
+.btn2{
+padding: .375rem 8.6rem;
+background-color:#6c757d29;
+border-color:#343a40;
+}
+
+    </style>
+    <title>MyAwc Login</title>
+    {% for message in messages %}
+    <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+
+        <strong>Error....</strong> {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+    </div>
+    {% endfor %}
+    <h1 align="center" class="my-4"><em>MyAwesome Cart</em></h1>
+    <div class="col-lg-4 offset-lg-3 my-4  border">
+        <h3 class=" my-3 ">Login</h3>
+        <form action="#" method="post">{% csrf_token %}
+
+            <div class="col mb-3">
+                <label for="username"><b>User Name</b></label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Choose Username" required>
+            </div>
+
+            <div class="col mb-4">
+                <label for="password"><b>Password</b></label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+
+            </div>
+
+            <div class="mb-4" align="center">
+                <button type="submit" id="success" class="btn btn1">Log In</button>
+            </div>
+
+        </form>
+    </div>
+    <div class="col mb-4" align="center">
+        <h6 class="text-muted">--------New to MyAsesome Cart ?--------</h6>
+
+    </div>
+    <div class="mb-4" align="center">
+        <a href="/registration" class="mx-2"><button type="submit" id="register" class="btn btn2">Create Your Account</button></a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</html>

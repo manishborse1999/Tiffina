@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+h1{
+font-size:2rem
+}
+.badge{
+font-size:186%;
+padding: .25em 3.9em;
+}
+.border{
+border-color:#c7c2c1
+}
+.offset-lg-3{
+margin-left:33%;
+}
+.btn1{
+padding: .375rem 8rem;
+background-color:#fd7e14e8;
+border-color:#0e0801b3;
+}
+
+    </style>
+    {% for message in messages %}
+    <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+
+        <strong>Error....</strong> {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+    </div>
+    {% endfor %}
+
+    <title>MyAwesome Cart Registration</title>
+
+    <h1 align="center" class="my-4"><em>MyAwesome Cart</em></h1>
+    <div class="col-lg-4 offset-lg-3 my-4  border">
+        <h3 class=" my-3 ">Create New Account</h3>
+        <form action="#" method="post">{% csrf_token %}
+
+            <div class="col mb-3">
+                <label for="first_name"><b>First Name</b></label>
+                <input type="text" class="form-control" id="first_name" name="first_name"
+                       placeholder="Enter Your First Name Here" required>
+            </div>
+            <div class="col mb-3">
+                <label for="last_name"><b>Last Name</b></label>
+                <input type="text" class="form-control" id="last_name" name="last_name"
+                       placeholder="Enter Your Last Name Here"
+                       required>
+            </div>
+            <div class="col mb-3">
+                <label for="email"><b>Email Address</b></label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email Here"
+                       required>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+            </div>
+            <div class="col mb-3">
+                <label for="username"><b>User Name</b></label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Choose Username"
+                       required>
+            </div>
+            <div class="col mb-3">
+                <label for="Password1"><b>Password</b></label>
+                <input type="password" class="form-control" id="Password1" placeholder="Password" name="password1">
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                    Password should contain Letters,Numbers and Special Symbols and it should contain at least 8 characters for security .
+                </small>
+            </div>
+            <div class="col mb-4">
+                <label for="Password2"><b>Re-enter Password</b></label>
+                <input type="password" class="form-control" id="Password2" placeholder="Confirm Password"
+                       name="password2">
+            </div>
+            <div class="mb-4" align="center">
+                <button type="submit" id="success" class="btn btn1">Create Account</button>
+            </div>
+            <h6 class="text-muted">------------------------------------------------------------</h6>
+            <div class="col mb-3" align="center">
+                <h6>
+                    Already have an account ?<a href="/login" class="mx-2">Sign in</a>
+                </h6>
+
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</html>
+
+
+
