@@ -5,6 +5,7 @@ from math import ceil
 import json
 from PayTm import Checksum
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib import messages
 MERCHANT_KEY = 'FLHoeugIBtcicXTv';
 
 # Create your views here.
@@ -50,14 +51,18 @@ def about(request):
 
 def contact(request):
     if request.method == "POST":
-        print(request)
+
         name = request.POST.get('name', '')
         email = request.POST.get('email', '')
         phone = request.POST.get('phone', '')
         desc = request.POST.get('desc', '')
-        print(name, email, phone, desc)
-        contact = Contact(name=name, email=email, phone=phone, desc=desc)
-        contact.save()
+
+        if len(name)<2 or len(email)<9 or len(phone)<10 or len(desc)<5:
+            messages.error(request, 'Please fill form Correctly')
+        else:
+            contact = Contact(name=name, email=email, phone=phone, desc=desc)
+            contact.save()
+            messages.success(request, 'Your Message has successfully sent')
     return render(request, 'shop/contact.html')
 
 
