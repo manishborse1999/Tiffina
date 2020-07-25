@@ -62,7 +62,7 @@ def contact(request):
         else:
             contact = Contact(name=name, email=email, phone=phone, desc=desc)
             contact.save()
-            messages.success(request, 'Your Message has successfully sent')
+            messages.success(request, 'Your Message has successfully sent,we will get back to you soon.')
     return render(request, 'shop/contact.html')
 
 

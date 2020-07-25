@@ -2,6 +2,8 @@
 
 {% block title %} My-Awesome Cart {% endblock %}
 
+{% block homeactive %} active {% endblock homeactive %}
+
 {% block css %}
 
 .btn-secondary{
@@ -11,7 +13,7 @@ border-color:#f8f9faa3;
 .col-md-3
 {
 display:inline-block;
-margin-left:-4px;
+margin-left:-6px;
 }
 
 .carousel-indicators .active{
@@ -47,19 +49,6 @@ box-sizing: border-box;
 top:auto;
 bottom:auto;
 padding-top: 213px;
-}
-
-.carousel-control-prev{
-left:-18px;
-}
-
-.carousel-control-next{
-right:-31px;
-}
-
-body .no-padding{
-padding-left:0px,
-padding-right:0px;
 }
 
 {% endblock %}
